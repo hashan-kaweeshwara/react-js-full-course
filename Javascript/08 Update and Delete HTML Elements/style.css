@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(174, 255, 228);
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+#login-form {
+  background-color: #fff;
+  display: block;
+  width: fit-content;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+input {
+  width: 300px;
+  padding: 5px;
+  margin: 10px 0;
+}
