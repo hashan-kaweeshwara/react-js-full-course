@@ -7,9 +7,13 @@ inputBox.addEventListener("input", function (e) {
   currentInputValue = e.target.value;
 });
 
-inputBox.addEventListener("keyup", func);
+inputBox.addEventListener("keyup", function (e) {
+  if (e.keyCode === 13) {
+    addListItem();
+  }
+});
 
-btnAdd.addEventListener("click", function () {
+function addListItem() {
   if (
     currentInputValue !== undefined &&
     currentInputValue !== null &&
@@ -28,4 +32,6 @@ btnAdd.addEventListener("click", function () {
   } else {
     alert("Please enter a valid todo item");
   }
-});
+}
+
+btnAdd.addEventListener("click", addListItem);
