@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+button {
+  font-size: 40px;
+  background: #702121;
+  color: #fff;
+}
+
+.small {
+  font-size: 24px;
+}
+
+.big {
+  font-size: 48px;
+}
