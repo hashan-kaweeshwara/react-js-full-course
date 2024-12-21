@@ -36,3 +36,7 @@ function addListItem() {
 }
 
 btnAdd.addEventListener("click", addListItem);
+
+btnUpdate.addEventListener("click", function () {
+  alert("Update Clicked");
+});
