@@ -14,16 +14,22 @@ inputBox.addEventListener("keyup", function (e) {
   }
 });
 
+function createNewNode() {
+  var newListElement = document.createElement("li");
+  var textNode = document.createTextNode(currentInputValue);
+  newListElement.appendChild(textNode);
+  newListElement.id = "item" + (list.childElementCount + 1);
+
+  return newListElement;
+}
+
 function addListItem() {
   if (
     currentInputValue !== undefined &&
     currentInputValue !== null &&
     currentInputValue !== ""
   ) {
-    var newListElement = document.createElement("li");
-    var textNode = document.createTextNode(currentInputValue);
-    newListElement.appendChild(textNode);
-    newListElement.id = "item" + (list.childElementCount + 1);
+    var newListElement = createNewNode();
 
     list.appendChild(newListElement);
     console.log(list.childElementCount);
@@ -38,5 +44,8 @@ function addListItem() {
 btnAdd.addEventListener("click", addListItem);
 
 btnUpdate.addEventListener("click", function () {
-  alert("Update Clicked");
+  var firstElement = list.firstElementChild;
+  var newListElement = createNewNode();
+
+  list.replaceChild(newListElement, firstElement);
 });
