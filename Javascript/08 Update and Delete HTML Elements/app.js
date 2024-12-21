@@ -2,6 +2,7 @@ var btnAdd = document.getElementById("add-item");
 var list = document.getElementById("todo-list");
 var inputBox = document.getElementById("todo-input");
 var btnUpdate = document.getElementById("update-item");
+var btnRemove = document.getElementById("remove-item");
 
 var currentInputValue = "";
 inputBox.addEventListener("input", function (e) {
@@ -48,4 +49,10 @@ btnUpdate.addEventListener("click", function () {
   var newListElement = createNewNode();
 
   list.replaceChild(newListElement, firstElement);
+});
+
+btnRemove.addEventListener("click", function () {
+  var firstElement = list.firstElementChild;
+
+  list.removeChild(firstElement);
 });
