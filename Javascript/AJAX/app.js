@@ -91,6 +91,20 @@ getTODOListFromBackend();
 function createTODOItemAtBackend() {
   var http = new XMLHttpRequest();
   http.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
+  http.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      if (this.status === 201) {
+        var response = JSON.parse(this.responseText);
+        LargestContentfulPaint.appendChild(
+          createTODODynamically(response.id, currentInputValue)
+        );
+        console.log("Add Item to the list");
+      } else {
+        console.log("Call Faild");
+      }
+    }
+  };
+
   var obj = JSON.stringify({
     userId: 1,
     title: currentInputValue,
