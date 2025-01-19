@@ -42,7 +42,7 @@ function addListItem() {
   }
 }
 
-btnAdd.addEventListener("click", addListItem);
+btnAdd.addEventListener("click", createTODOItemAtBackend);
 
 btnUpdate.addEventListener("click", function () {
   var firstElement = list.firstElementChild;
@@ -59,7 +59,7 @@ btnRemove.addEventListener("click", function () {
 
 function createTODODynamically(id, title) {
   var newListElement = document.createElement("li");
-  var textNode = document.createTextNode("title");
+  var textNode = document.createTextNode(title);
   newListElement.appendChild(textNode);
   newListElement.id = id;
 
@@ -87,3 +87,14 @@ function getTODOListFromBackend() {
 }
 
 getTODOListFromBackend();
+
+function createTODOItemAtBackend() {
+  var http = new XMLHttpRequest();
+  http.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
+  var obj = JSON.stringify({
+    userId: 1,
+    title: currentInputValue,
+    completed: false,
+  });
+  http.send(obj);
+}
