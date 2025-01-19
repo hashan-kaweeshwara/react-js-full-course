@@ -1,45 +1,29 @@
-body {
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  background-color: skyblue;
+}
+body {
+  background-color: rgb(174, 255, 228);
+}
+header {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  font-family: sans-serif;
-}
-section {
-  text-align: center;
 }
 #login-form {
-  background-color: aliceblue;
+  background-color: #fff;
+  display: block;
+  width: fit-content;
+  padding: 30px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  width: fit-content;
-  padding: 20px;
-  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
 input {
-  height: fit-content;
-  width: 400px;
-  font-size: 25px;
-  padding: 5px 10px;
-  margin: 0 0 10px;
-  border-radius: 5px;
-}
-#btn-submit {
-  width: 400px;
-  width: 100%;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-#username-error {
-  color: red;
-  font-size: 16px;
-  letter-spacing: 1px;
-  margin-top: 0px;
-  margin-bottom: 24px;
-  display: none;
+  width: 300px;
+  padding: 5px;
+  margin: 10px 0;
 }

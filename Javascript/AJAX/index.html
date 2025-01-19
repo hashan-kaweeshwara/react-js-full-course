@@ -7,24 +7,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section>
-      <div>
-       
+    <header>
+      <section>
         <input
-          id="task"
-          type="type"
-          name="task"
-          placeholder="Enter tasks here"
-          required
+          id="todo-input"
+          type="text"
+          placeholder="Enter todo item here..."
         />
-        <p id="username-error">Please enter a valid Username</p>
-        
-       <div>
-        <input type="submit" id="btn-add" value="Add List Item" />
-        <input type="submit" id="btn-update" value="Update First Item" />
-       </div>
-      </form>
-    </section>
+        <br />
+        <button id="add-item">Add List Item</button>
+        <button id="update-item">Update List Item</button>
+        <button id="remove-item">Remove First Item</button>
+        <br />
+        <br />
+        <ul id="todo-list">
+          <li id="item1">List Item 1</li>
+          <li>List Item 2</li>
+        </ul>
+      </section>
+    </header>
     <script src="app.js"></script>
   </body>
 </html>
