@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <section>
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Enter todo item here..."
+        />
+        <br />
+        <button id="add-item">Add List Item</button>
+        <button id="update-item">Update List Item</button>
+        <button id="remove-item">Remove First Item</button>
+        <br />
+        <br />
+        <ul id="todo-list">
+          <li id="item1">List Item 1</li>
+          <li>List Item 2</li>
+        </ul>
+      </section>
+    </header>
+    <script src="app.js"></script>
+  </body>
+</html>
