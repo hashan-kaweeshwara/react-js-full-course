@@ -33,7 +33,7 @@ function addListItem() {
   ) {
     var newListElement = createNewNode();
 
-    list.appendChild(newListElement);
+    list.append(newListElement);
     console.log(list.childElementCount);
 
     inputBox.value = "";
@@ -86,7 +86,7 @@ function getTODOListFromBackend() {
   http.send();
 }
 
-getTODOListFromBackend();
+// getTODOListFromBackend();
 
 function createTODOItemAtBackend() {
   var http = new XMLHttpRequest();
@@ -95,7 +95,7 @@ function createTODOItemAtBackend() {
     if (this.readyState === 4) {
       if (this.status === 201) {
         var response = JSON.parse(this.responseText);
-        LargestContentfulPaint.appendChild(
+        LargestContentfulPaint.append(
           createTODODynamically(response.id, currentInputValue)
         );
         console.log("Add Item to the list");
@@ -112,3 +112,7 @@ function createTODOItemAtBackend() {
   });
   http.send(obj);
 }
+
+var listItem = "<li>First Item</li>";
+console.log(listItem);
+list.append(listItem);
