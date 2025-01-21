@@ -1,5 +1,5 @@
 var btnAdd = document.getElementById("add-item");
-var list = $("todo-list");
+var list = $("#todo-list");
 var inputBox = document.getElementById("todo-input");
 var btnUpdate = document.getElementById("update-item");
 var btnRemove = document.getElementById("remove-item");
@@ -75,7 +75,6 @@ function getTODOListFromBackend() {
         var response = JSON.parse(this.responseText);
         for (var i = 0; i < response.length; i++) {
           list.append(createTODODynamically(response[i].id, response[i].title));
-          todoCount.innerHTML = response.length;
         }
       } else {
         console.log("Call Failed");
@@ -86,7 +85,7 @@ function getTODOListFromBackend() {
   http.send();
 }
 
-// getTODOListFromBackend();
+getTODOListFromBackend();
 
 function createTODOItemAtBackend() {
   var http = new XMLHttpRequest();
@@ -112,7 +111,3 @@ function createTODOItemAtBackend() {
   });
   http.send(obj);
 }
-
-var listItem = "<li>First Item</li>";
-console.log(listItem);
-list.append(listItem);
