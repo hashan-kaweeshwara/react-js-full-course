@@ -1,8 +1,9 @@
 var btnAdd = document.getElementById("add-item");
-var list = document.getElementById("todo-list");
+var list = $("todo-list");
 var inputBox = document.getElementById("todo-input");
 var btnUpdate = document.getElementById("update-item");
 var btnRemove = document.getElementById("remove-item");
+var todoCount = document.getElementById("todo-count");
 
 var currentInputValue = "";
 inputBox.addEventListener("input", function (e) {
@@ -60,7 +61,7 @@ btnRemove.addEventListener("click", function () {
 function createTODODynamically(id, title) {
   var newListElement = document.createElement("li");
   var textNode = document.createTextNode(title);
-  newListElement.appendChild(textNode);
+  newListElement.append(textNode);
   newListElement.id = id;
 
   return newListElement;
@@ -73,9 +74,8 @@ function getTODOListFromBackend() {
       if (this.status === 200) {
         var response = JSON.parse(this.responseText);
         for (var i = 0; i < response.length; i++) {
-          list.appendChild(
-            createTODODynamically(response[i].id, response[i].title)
-          );
+          list.append(createTODODynamically(response[i].id, response[i].title));
+          todoCount.innerHTML = response.length;
         }
       } else {
         console.log("Call Failed");
