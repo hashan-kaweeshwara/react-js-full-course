@@ -1,43 +1,25 @@
-console.clear();
-
-const name = "Hashan Kaweeshwara DeSilva";
-const nameArr = name.split(" ");
-
-console.log(nameArr);
-
-// let firstName = nameArr[0];
-// let middleName = nameArr[1];
-
-let [firstName, middleName, lastName] = nameArr;
-
-console.log(firstName);
-console.log(middleName);
-console.log(lastName);
+const mArr = [1, 2, 3, 4, 5];
 
 //
 
-const person = {
-  firstName1: "John",
-  middleName1: "Manuel",
-  lastName1: "Lark",
-  age: 28,
+let newArr = [];
+
+const doubleValues = (item) => {
+  return item * 2;
 };
 
-let { firstName1, lastName1 } = person;
+for (let i = 0; i < mArr.length; i++) {
+  newArr.push(doubleValues(mArr[i]));
+}
 
-console.log(firstName1);
-console.log(lastName1);
+console.log(newArr);
 
 //
 
-let firstName2 = "Hash";
-let lastName2 = "Kawee";
-let age = 28;
+let newArr2 = mArr.map((item, i) => {
+  console.log(`Item at pos: ${i} is ${item}`);
+  return item * 2;
+});
 
-const personObj = {
-  firstName2,
-  lastName2,
-  age: age,
-};
-
-console.log(personObj);
+console.log(mArr);
+console.log(newArr2);
